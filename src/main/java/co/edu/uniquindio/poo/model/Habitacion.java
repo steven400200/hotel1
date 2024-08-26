@@ -1,6 +1,11 @@
 package co.edu.uniquindio.poo.model;
-import java.util.ArrayList;
+import lombok.*;
 import java.util.List;
+
+
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
 
 public class Habitacion {
     private int numero;
@@ -8,31 +13,8 @@ public class Habitacion {
     private double precio;
     private List<Servicio> servicios;
 
-    public Habitacion(int numero, String tipo, double precio) {
-        this.numero = numero;
-        this.tipo = tipo;
-        this.precio = precio;
-        this.servicios = new ArrayList<>();
-    }
-
-    public int getNumero() {
-        return numero;
-    }
-
-    public String getTipo() {
-        return tipo;
-    }
-
-    public double getPrecio() {
-        return precio;
-    }
-
     public void agregarServicio(Servicio servicio) {
         servicios.add(servicio);
-    }
-
-    public List<Servicio> getServicios() {
-        return servicios;
     }
 }
 

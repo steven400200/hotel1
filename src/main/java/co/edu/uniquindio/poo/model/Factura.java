@@ -1,11 +1,12 @@
 package co.edu.uniquindio.poo.model;
 
+import lombok.AllArgsConstructor;
+import lombok.Data;
+
+@Data
+@AllArgsConstructor
 public class Factura {
     private Cliente cliente;
-
-    public Factura(Cliente cliente) {
-        this.cliente = cliente;
-    }
 
     public void generarFactura() {
         double total = 0;

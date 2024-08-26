@@ -1,14 +1,18 @@
 package co.edu.uniquindio.poo.model;
 
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
 import java.util.List;
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
 
 public class RecordatorioServicio {
 
     private ReservaChecker reservaChecker;
 
-    public RecordatorioServicio(ReservaChecker reservaChecker) {
-        this.reservaChecker = reservaChecker;
-    }
 
     public void enviarRecordatorio(Cliente cliente) {
         List<Reserva> reservasActivas = cliente.getReservasActivas();
