@@ -1,7 +1,9 @@
 package co.edu.uniquindio.poo.controller;
 
 import co.edu.uniquindio.poo.model.*;
-
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Calendar;
 import java.util.Date;
 
 public class controllerHotel {
@@ -22,24 +24,25 @@ public class controllerHotel {
         cliente3.setNombre("Pedro");
         cliente3.setId("1006");
 
-        // Crear habitación
-        Habitacion habitacion = new Habitacion(101, "doble", 150.0);
+        // Crear habitaciones
+        Habitacion habitacion1 = new Habitacion(101, "Doble", 150.0);
+        Habitacion habitacion2 = new Habitacion(102, "Suite", 250.0);
 
         // Crear fechas
         Date fechaEntrada = new Date(System.currentTimeMillis() + 2L * 24 * 60 * 60 * 1000); // Dentro de 2 días
         Date fechaSalida = new Date(System.currentTimeMillis() + 5L * 24 * 60 * 60 * 1000);
 
         // Crear reserva
-        Reserva reserva = new Reserva(habitacion, cliente1, fechaEntrada, fechaSalida);
+        Reserva reserva = new Reserva(habitacion1, cliente1, fechaEntrada, fechaSalida);
         cliente1.agregarReserva(reserva);
 
         // Añadir servicios a la habitación
         Servicio servicioHabitacion = new ServicioHabitacion();
-        habitacion.agregarServicio(servicioHabitacion);
+        habitacion1.agregarServicio(servicioHabitacion);
         servicioHabitacion.consumir();
 
         Servicio spa = new Spa();
-        habitacion.agregarServicio(spa);
+        habitacion1.agregarServicio(spa);
         spa.consumir();
         // Crear y generar factura
         Factura factura = new Factura(cliente1);
@@ -53,6 +56,34 @@ public class controllerHotel {
 
         // Enviar recordatorios
         recordatorioServicio.enviarRecordatorio(cliente1);
+
+        //ultimo ejercicio
+
+
+        // Crear reservas
+        Calendar cal = Calendar.getInstance();
+
+        cal.set(2024, Calendar.AUGUST, 1); // 1 de agosto de 2024
+        Date fechaEntrada1 = cal.getTime();
+        cal.set(2024, Calendar.AUGUST, 5); // 5 de agosto de 2024
+        Date fechaSalida1 = cal.getTime();
+
+        cal.set(2024, Calendar.AUGUST, 10); // 10 de agosto de 2024
+        Date fechaEntrada2 = cal.getTime();
+        cal.set(2024, Calendar.AUGUST, 15); // 15 de agosto de 2024
+        Date fechaSalida2 = cal.getTime();
+
+        Reserva reserva1 = new Reserva(habitacion1, cliente1, fechaEntrada1, fechaSalida1);
+        Reserva reserva2 = new Reserva(habitacion2, cliente2, fechaEntrada2, fechaSalida2);
+
+        // Agregar reservas a la lista
+        List<Reserva> reservas = new ArrayList<>();
+        reservas.add(reserva1);
+        reservas.add(reserva2);
+
+        // Crear reporte de ingresos y mostrarlo
+        ReporteIngresos reporte = new ReporteIngresos();
+        reporte.mostrarReporteIngresos(reservas, Calendar.AUGUST, 2024);
 
     }
 
