@@ -25,8 +25,12 @@ public class controllerHotel {
         // Crear habitación
         Habitacion habitacion = new Habitacion(101, "doble", 150.0);
 
+        // Crear fechas
+        Date fechaEntrada = new Date(System.currentTimeMillis() + 2L * 24 * 60 * 60 * 1000); // Dentro de 2 días
+        Date fechaSalida = new Date(System.currentTimeMillis() + 5L * 24 * 60 * 60 * 1000);
+
         // Crear reserva
-        Reserva reserva = new Reserva(habitacion, cliente1, new Date(), new Date());
+        Reserva reserva = new Reserva(habitacion, cliente1, fechaEntrada, fechaSalida);
         cliente1.agregarReserva(reserva);
 
         // Añadir servicios a la habitación
@@ -40,6 +44,15 @@ public class controllerHotel {
         // Crear y generar factura
         Factura factura = new Factura(cliente1);
         factura.generarFactura();
+
+        // Crear instancia de ReservaChecker
+        ReservaChecker reservaChecker = new ReservaChecker();
+
+        // Crear instancia de RecordatorioServicio
+        RecordatorioServicio recordatorioServicio = new RecordatorioServicio(reservaChecker);
+
+        // Enviar recordatorios
+        recordatorioServicio.enviarRecordatorio(cliente1);
 
     }
 
