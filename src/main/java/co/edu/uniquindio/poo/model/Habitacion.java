@@ -13,8 +13,18 @@ public class Habitacion {
     private double precio;
     private List<Servicio> servicios;
 
+    public Habitacion(int numero, String tipo, double precio) {
+        this.numero = numero;
+        this.tipo = tipo;
+        this.precio = precio;
+    }
+
     public void agregarServicio(Servicio servicio) {
-        servicios.add(servicio);
+
+        if (servicio == null){
+            servicios.add( servicio);
+        }
+
     }
 }
 

@@ -27,7 +27,6 @@ public class controllerHotel {
         // Crear habitaciones
         Habitacion habitacion1 = new Habitacion(101, "Doble", 150.0);
         Habitacion habitacion2 = new Habitacion(102, "Suite", 250.0);
-
         // Crear fechas
         Date fechaEntrada = new Date(System.currentTimeMillis() + 2L * 24 * 60 * 60 * 1000); // Dentro de 2 días
         Date fechaSalida = new Date(System.currentTimeMillis() + 5L * 24 * 60 * 60 * 1000);
@@ -36,7 +35,7 @@ public class controllerHotel {
         Reserva reserva = new Reserva(habitacion1, cliente1, fechaEntrada, fechaSalida);
         cliente1.agregarReserva(reserva);
 
-        // Añadir servicios a la habitación
+         //Añadir servicios a la habitación
         Servicio servicioHabitacion = new ServicioHabitacion();
         habitacion1.agregarServicio(servicioHabitacion);
         servicioHabitacion.consumir();

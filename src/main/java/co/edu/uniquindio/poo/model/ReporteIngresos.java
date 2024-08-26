@@ -28,6 +28,7 @@ public class ReporteIngresos {
     }
 
     public void mostrarReporteIngresos(List<Reserva> reservas, int mes, int anio) {
+        System.out.println("MOSTRANDO EL REPORTE DE INGRESOS");
         double ingresosMensuales = calcularIngresosMensuales(reservas, mes, anio);
         System.out.println("Ingresos generados en el mes " + (mes + 1) + "/" + anio + ": $" + ingresosMensuales);
     }
