@@ -1,5 +1,8 @@
 package co.edu.uniquindio.poo.model;
 import lombok.*;
+
+import javax.swing.*;
+import java.util.ArrayList;
 import java.util.List;
 
 
@@ -11,7 +14,7 @@ public class Habitacion {
     private int numero;
     private String tipo;  // Puede ser "simple", "doble", "suite"
     private double precio;
-    private List<Servicio> servicios;
+    private List<Servicio> servicios = new ArrayList<>();
 
     public Habitacion(int numero, String tipo, double precio) {
         this.numero = numero;
@@ -20,10 +23,7 @@ public class Habitacion {
     }
 
     public void agregarServicio(Servicio servicio) {
-
-        if (servicio == null){
-            servicios.add( servicio);
-        }
+                servicios.add(servicio);
 
     }
 }

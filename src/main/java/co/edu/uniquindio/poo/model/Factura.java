@@ -18,18 +18,15 @@ public class Factura {
                     " (" + habitacion.getTipo() + ") - Precio por noche: $" + habitacion.getPrecio());
 
             // Aquí puedes calcular el costo total de la reserva si es necesario
-            total += calcularCostoReserva(reserva);
+            reserva.
+            total += reserva.getCalculadorCostoReserva().calcularCosto(reserva);
         }
 
         System.out.println("Total a pagar: $" + total);
     }
 
-    private double calcularCostoReserva(Reserva reserva) {
-        // Ejemplo simple para calcular el costo de una reserva. Puedes ajustar según tus necesidades.
-        long diffInMillis = reserva.getFechaSalida().getTime() - reserva.getFechaEntrada().getTime();
-        long diffInDays = diffInMillis / (1000 * 60 * 60 * 24);
-        return reserva.getHabitacion().getPrecio() * diffInDays;
-    }
+
+
 }
 
 

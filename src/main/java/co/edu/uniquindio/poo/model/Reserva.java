@@ -11,6 +11,7 @@ public class Reserva {
     private Cliente cliente;
     private Date fechaEntrada;
     private Date fechaSalida;
+    private final CalculadorCostoReserva calculadorCostoReserva = new CalculadorCostoReserva();
 
 
 }

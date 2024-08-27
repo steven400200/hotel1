@@ -16,6 +16,7 @@ public class Cliente {
 
 
     public void agregarReserva(Reserva reserva) {
+
         reservasActivas.add(reserva);
     }
 }
