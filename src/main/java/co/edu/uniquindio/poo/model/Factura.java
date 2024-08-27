@@ -18,7 +18,7 @@ public class Factura {
                     " (" + habitacion.getTipo() + ") - Precio por noche: $" + habitacion.getPrecio());
 
             // Aquí puedes calcular el costo total de la reserva si es necesario
-            reserva.
+            //reserva.
             total += reserva.getCalculadorCostoReserva().calcularCosto(reserva);
         }
 
