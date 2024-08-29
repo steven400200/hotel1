@@ -12,10 +12,7 @@ public class Cliente {
     private String nombre;
     private String id;
     private List<Reserva>  reservasActivas  = new ArrayList<>();
-
-
-
-
+    
     public void agregarReserva(Reserva reserva) {
         reservasActivas.add(reserva);
     }
