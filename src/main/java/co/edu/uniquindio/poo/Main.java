@@ -6,5 +6,6 @@ public class Main {
         controllerHotel controller = new controllerHotel();
         controller.inicializarDatos();
         System.out.println("Hello world!");
+        
     }
 }

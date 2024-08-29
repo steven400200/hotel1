@@ -3,7 +3,7 @@ import java.util.Date;
 import java.util.concurrent.TimeUnit;
 
 
-public class ReservaChecker {
+public class ReservaChecker implements IAvisoTresDias{
 
     public boolean esDentroDeTresDias(Reserva reserva) {
         Date hoy = new Date();
