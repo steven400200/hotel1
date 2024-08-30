@@ -7,7 +7,6 @@ import lombok.Data;
 @AllArgsConstructor
 public abstract class Factura {
     protected Cliente cliente;
-
     public abstract void generarFactura();
 
 

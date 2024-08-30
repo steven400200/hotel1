@@ -9,8 +9,6 @@ public abstract class Servicio implements Iconsumible{
 
     private String nombre;
 
-
-
     public abstract void consumir();
 }
 
