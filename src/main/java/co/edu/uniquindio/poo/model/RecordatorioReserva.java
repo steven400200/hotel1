@@ -9,7 +9,7 @@ import java.util.List;
 @NoArgsConstructor
 @AllArgsConstructor
 
-public class RecordatorioServicio {
+public class RecordatorioReserva {
 
     private ReservaChecker reservaChecker;
 

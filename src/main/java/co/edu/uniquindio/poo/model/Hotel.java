@@ -37,4 +37,5 @@ public class Hotel {
     public List<Habitacion> getListaHabitaciones() {
         return listaHabitaciones;
     }
+
 }

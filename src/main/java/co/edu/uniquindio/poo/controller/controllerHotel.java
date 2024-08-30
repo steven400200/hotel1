@@ -1,8 +1,7 @@
 package co.edu.uniquindio.poo.controller;
 
 import co.edu.uniquindio.poo.model.*;
-import java.util.ArrayList;
-import java.util.List;
+
 import java.util.Calendar;
 import java.util.Date;
 
@@ -53,17 +52,17 @@ public class controllerHotel {
         spa.consumir();
         hotel.agregarServicio(spa);
         // Crear y generar factura
-        Factura factura = new Factura(cliente1);
+        Factura factura = new FacturaUsual(cliente1);
         factura.generarFactura();
 
         // Crear instancia de ReservaChecker
         ReservaChecker reservaChecker = new ReservaChecker();
 
         // Crear instancia de RecordatorioServicio
-        RecordatorioServicio recordatorioServicio = new RecordatorioServicio(reservaChecker);
+        RecordatorioReserva recordatorioReserva = new RecordatorioReserva(reservaChecker);
 
         // Enviar recordatorios
-        recordatorioServicio.enviarRecordatorio(cliente1);
+        recordatorioReserva.enviarRecordatorio(cliente1);
 
         //ultimo ejercicio
 
@@ -90,6 +89,4 @@ public class controllerHotel {
         reporte.mostrarReporteIngresos(hotel.getListaReservas(), Calendar.AUGUST, 2024);
         return hotel;
     }
-
-
 }
